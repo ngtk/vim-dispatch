@@ -851,6 +851,7 @@ endfunction
 function! s:open_quickfix(request, copen) abort
   let was_qf = &buftype ==# 'quickfix'
   execute 'botright' (a:copen ? 'copen' : 'cwindow')
+  execute 'clast'
   execute 'AnsiEsc'
   if &buftype ==# 'quickfix' && !was_qf && a:copen != 1
     wincmd p
